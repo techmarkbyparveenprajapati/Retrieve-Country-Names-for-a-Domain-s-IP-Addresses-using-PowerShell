@@ -1,0 +1,19 @@
+# Specify the website domain
+$domain = "ionos.co.uk"
+
+# Resolve the DNS records for the domain
+$result = Resolve-DnsName -Name $domain
+
+# Get the IP address from the DNS record
+$ipAddress = $result.IPAddress
+
+$accessKey = "Your_access_key"
+
+# Use the ipstack API to determine the country
+$geolocationUrl = "http://api.ipstack.com/$ipaddress/?access_key=$accesskey"
+$geolocationData = Invoke-RestMethod -Uri $geolocationUrl
+
+
+# Display the hosted country
+$country = $geolocationData.country_name
+$country

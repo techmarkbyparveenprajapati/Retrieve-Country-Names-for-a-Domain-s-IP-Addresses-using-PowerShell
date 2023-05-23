@@ -1,0 +1,8 @@
+# Specify the website domain
+$domain = "ionos.co.uk"
+
+# Resolve the DNS records for the domain
+$result = Resolve-DnsName -Name $domain
+
+# Display the DNS records
+$result
